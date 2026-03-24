@@ -248,9 +248,8 @@ This confirms the state machine correctly rejects illegal transitions. ✅
 
 ### Challenges
 
-- **Combo tax blending** required careful design. Because a combo's components can span both food and drink categories, a simple flat rate would be incorrect. The weighted-average approach solves this but adds a dependency from `Combo` on its components at tax-computation time.
 - **Discount ordering** needed explicit documentation. Applying percentage discounts before fixed ones is a design choice, not a universal standard. This is now stated clearly in the pricing formula section.
-- **State pattern verbosity** — six state classes for six states adds files. For a project of this size, a state-field-plus-transition-table approach would also have been reasonable; the class-based approach was chosen for extensibility and to demonstrate the pattern explicitly.
+
 
 ### Possible Improvements
 
@@ -259,5 +258,5 @@ This confirms the state machine correctly rejects illegal transitions. ✅
 - **Kitchen display** — A separate "kitchen view" showing all Confirmed/Preparing orders.
 - **Split payments** — Support multiple payment methods per order.
 - **Undo/redo** — Allow undoing the last item addition or discount.
-- **Unit test suite** — Replace the manual test plan with `pytest` test files for regression coverage.
-- **Cancellation state** — Add a `Cancelled` transition reachable from `Created` or `Confirmed`.
+
+
